@@ -33,5 +33,8 @@ export type S3BucketOptions = {
 export function s3Bucket(_options: S3BucketOptions) {
   return {
     bucketName: 'test',
+    async get(options: { key: string }) {
+      return options.key;
+    },
   };
 }
